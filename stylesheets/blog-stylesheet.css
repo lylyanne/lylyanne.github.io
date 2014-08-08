@@ -1,0 +1,114 @@
+.header {
+   height: 30%;
+}
+
+header {
+      text-align: center;
+      background: url('../img/felicia-bg.jpg');
+      background-size: cover;
+      color: white;
+    }
+
+h1 {
+	  font-family: 'Pacifico', cursive;
+      font-size: 50px;
+      margin: 5px;
+    }
+
+.header-image {
+      margin: 30px 0px 0px 0px;
+      border: 7px solid white;
+      border-radius: 100%;  
+    }
+
+ .navigation-ul {
+      padding: 10px;
+      background: #556B2F;
+    }
+
+
+.navigation-ul li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+      margin: 0 20px;
+    }
+
+.navigation-ul li a {
+      color: white;
+ }
+
+.all-content {
+    height: 70%;
+}
+
+ .blog-text-area {
+ 	width:75%;
+ 	float:left;
+ }
+
+ a.blog-title { 	
+ 	font-family: 'Oswald', sans-serif;
+ 	color: black;
+ 	text-decoration: none;
+ }
+
+.date {
+   color: gray;
+}
+
+ .paging li{
+ 	display: inline;
+ }
+
+.prev a {
+   float: left;
+   margin-left: -45px;
+}
+
+.prev-disabled a {
+   float: left;
+   text-decoration: none;
+   margin-left: -45px;
+}
+
+.next a {
+   float: right;
+}
+
+.next-disabled a {
+   float: right;
+   text-decoration: none;
+}
+
+.social-media-and-archive {
+	width:25%;
+	float:left;
+}
+
+.icon-list {
+	display: inline;
+}
+
+.social-media-icon {
+	height: 30px;
+	width: 30px;
+	border-radius: 5px;
+	padding: 0;
+}
+
+h3 {
+   font-family: 'Oswald', sans-serif;
+   margin-left: -40px;
+}
+
+hr {
+   margin-left: -40px;
+}
+
+.archive-list {
+   margin-left: -40px;
+}
+
+ .footer {
+ 	text-align:center;"
+ }
