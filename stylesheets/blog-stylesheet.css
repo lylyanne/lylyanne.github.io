@@ -89,6 +89,22 @@ h1 {
 	display: inline;
 }
 
+.other-works-link {
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  color: #556B2F;
+}
+
+.other-works {
+  border-radius: 5px;
+  border: solid 2px #556B2F;
+  background-color: ivory;
+  margin-left: -40px;
+  height: 100px;
+  text-align: center;
+}
+
 .social-media-icon {
 	height: 30px;
 	width: 30px;
