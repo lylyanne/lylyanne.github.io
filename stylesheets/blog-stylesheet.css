@@ -4,9 +4,7 @@
 
 header {
       text-align: center;
-      background: url('../img/felicia-bg.JPG');
-      background-size: cover;
-      color: white;
+      color: #556B2F;
     }
 
 h1 {
@@ -16,9 +14,8 @@ h1 {
     }
 
 .header-image {
-      margin: 30px 0px 0px 0px;
-      border: 7px solid white;
-      border-radius: 100%;  
+      width: 15%;
+      height: 15%; 
     }
 
  .navigation-ul {
@@ -35,6 +32,7 @@ h1 {
 
 .navigation-ul li a {
       color: white;
+      font-family: verdana;
  }
 
 .all-content {
@@ -128,6 +126,7 @@ h3 {
 }
 
  .footer {
+  font-family: verdana;
  	text-align:center;
   clear:both;
  }
