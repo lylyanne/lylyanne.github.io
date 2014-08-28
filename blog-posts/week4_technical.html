@@ -22,11 +22,32 @@
   <div>
 	  <div class="blog-text-area" >
 	  	<article>
-	     <a class="blog-title" href="../blog-posts/week4_technical.html"><h2 >Ruby’s group_by method</h2></a>
+	     <a class="blog-title" href="../blog-posts/week4_technical.html"><h2 >Ruby's group_by method</h2></a>
 	  	 <h4 class="date">28 August 2014</h4>
-       	 <p>Coming soon ...</p>
-         
-		
+       	 <p>Just like the name indicated, the group_by method is useful for grouping your collection based on the criteria that you provided.</p>
+       	 <p>For example:</p>
+       	 <code>
+			arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] <br>
+			arr.group_by { |x| x.even? } #=> {false=>[1, 3, 5, 7, 9], true=>[2, 4, 6, 8, 10]}
+		</code>
+		<p>The group_by method always returns a hash. Within the hash, the keys are the result from the block (which in our case are the true and false) and the values are the elements that fits the keys. 1,3,5,7,9 are not even so they fit under the false key while 2,4,6,8,10 are even and fall under the true key.</p>
+		<p>Just like other Ruby methods, you can chain the group_by method to make your hash more presentable to the users or you can use other methods to customize the result further.</p>
+		<p>Here is an example to display the grouping in a nicer way for end users:</p>
+		<code>
+		arr.group_by { |x| x.even? }.each do |k, v| <br>
+		   p k == false ? "The odd numbers are -> #{v.join(', ')}" : "The even numbers are -> #{v.join(', ')}" <br>
+		end
+		</code>
+		<p>This will print:</p>
+		<code>
+			"The odd numbers are -> 1, 3, 5, 7, 9" <br>
+			"The even numbers are -> 2, 4, 6, 8, 10"
+		</code>
+		<p>And here is an example to reverse the values after they were grouped:</p>
+		<code>
+			arr.group_by { |x| x.even? }.each { |k,v| v.reverse! } <br>#=> {false=>[9, 7, 5, 3, 1], true=>[10, 8, 6, 4, 2]}
+		</code>
+		<p>That's the gist of the group_by method! I hope this article solidifies your understanding of it.</p>
 	  	 <ul class="paging">
             <li class="prev"><a href="../blog-posts/week4_cultural_blog.html">&larr; Previous</a></li>            
             <li class="next"><a href="../blog-posts/week3_cultural.html">Next &rarr;</a></li>
