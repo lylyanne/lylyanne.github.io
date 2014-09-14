@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+	<title>Felicia Wang's Personal Blog</title>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+	<meta name=“viewport” content=“width=device-width”>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/blog-responsive.css">
+</head>
+<body>
+	<div class="header">
+	<header>
+	    <img class="header-image" src="../img/Geek_Girl_Vector_Character.jpg">
+	    <h1>Felicia Wang's Personal Blog</h1>
+	    <ul class="navigation-ul">
+	      <li><a class="navigation-link" href="../blog-posts/about.html">About Me</a></li>
+	      <li><a class="navigation-link" href="../blog-posts/latest-blog-post.html">Blog</a></li>
+	      <li><a class="navigation-link" href="../blog-posts/projects.html">Projects</a></li>
+	    </ul>
+    </header>
+    </div>
+  <div>
+	  <div class="blog-text-area" >
+	  	<article>
+	     <a class="blog-title" href="../blog-posts/week6_technical.html"><h2 >Blocks, Procs, and Lambdas</h2></a>
+	  	 <h4 class="date">14 September 2014</h4>
+       	 <h3>Blocks</h3>
+       	 <p>A block is just pieces of code between the opening and closing curly bracket or between the do and end keyword.</p>
+       	 <p>The purpose of block is to instruct Ruby on how to process each element in an Array or Hash.</p>
+       	 <p>For example, below code are using the same method but the result will be different since different blocks are provided.</p>
+<pre>
+arr = [1,2,3,4,5]
+arr.each do |x| 
+	p x * 2
+end #=> 2,4,6,8,10
+
+arr.each do |x|
+	p x if x % 2 == 0
+end #=> 2,4</pre>
+       	 <h3>Procs</h3>
+       	 <p>A proc is a block of code that can be saved and assign to a variable. An example of proc is:</p><code> 
+three_letter_word = Proc.new do |x| <br>
+	x if x.length == 3 <br>
+end <br><br>
+
+["cat", "tiger", "lemur", "dog", "monkey"].select(&three_letter_word) #=> ["cat", "dog"]</code>
+		<p>You see in the select method how the &three_letter_word is replacing the do..end block from three_letter_word above? The ampersand(&) symbol is the convention we use to convert our proc back to block.</p>
+		<p>Proc can also be called by using the call method like below:</p><code> 
+letter_builder = Proc.new { |x| puts x } <br><br>
+
+letter_builder.call(["Dear Friend,", "   Just want to say I am thinking of you", "   Hope you have a wonderful day today", "Your BFF"]) <br>
+#=>Dear Friend, <br>
+#   Just want to say I am thinking of you <br>
+#   Hope you have a wonderful day today <br>
+#  Your BFF</code>
+		<h3>Lambdas</h3>
+		<p>A lambda is created for the same purpose as proc though its syntax is different as you can see below.</p>
+<code>
+three_letter_word = lambda { |x| x if x.length == 3 } <br>
+["cat", "tiger", "lemur", "dog", "monkey"].select(&three_letter_word) #=> ["cat", "dog"] <br>
+</code>
+		<p>A lambda, just like proc, can also be called using the call method.</p>
+		<h3>Lamda and Proc differences:</h3>
+		<ul>
+			<li>Lambda checks the argument passed to it while proc doesn't. Proc will just ignore the additional argument if too many arguments are passed and proc will assume the remaining argument as nil if too few arguments are passed.</li>
+		  <code><br>
+		greet = Proc.new { |greeting, name| puts "Say #{greeting} to #{name}" } <br>
+		greet.call("Hello", "Mia", "Morning", "Johnny") #=> "Say Hello to Mia" <br><br>
+
+		greet = lambda { |greeting, name| puts "Say #{greeting} to #{name}" } <br>
+		greet.call("Hello", "Mia", "Morning", "Johnny") #=> wrong number of arguments (4 for 2) <br><br>
+		</code>
+		<li>When the proc or lambda contains a return statement, lambda will return control back to the calling function and executes the next statement after the lambda call. Proc on the other hand, will exit out of the calling function without executing the next statement after the proc call.</li>
+		<code> <br>
+			def proc_test <br>
+		    greet = Proc.new { return "Hello from Proc" } <br>
+		    greet.call <br>
+		    "In proc_test method" <br>
+		end <br>
+		p proc_test #=> "Hello from Proc" <br><br>
+
+		def lambda_test <br>
+		    greet = lambda { return "Hello from lambda" } <br>
+		    greet.call <br>
+		    "In lambda_test method" <br>
+		end <br>
+		p lambda_test #=> "In lambda test method"<br><br>
+		</code>
+		</ul>
+		<p><em>Sources: Codecademy</em></p>
+	  	 <ul class="paging">
+            <li class="prev"><a href="../blog-posts/week6_cultural.html">&larr; Previous</a></li>            
+            <li class="next"><a href="../blog-posts/week5_cultural_blog.html">Next &rarr;</a></li>
+          </ul>
+          <br>
+        </article>
+	  </div>
+	  <div class="social-media-and-archive">
+	    <section>
+	  	<br>
+	  	<ul>
+	  		<li class="icon-list"><a href="http://www.linkedin.com/in/feliciawijaya/"><img class="social-media-icon" src="../img/linked-in.jpg"></a></li>
+	  		<li class="icon-list"><a href="https://github.com/lylyanne"><img class="social-media-icon" src="../img/github.jpg"></a></li>
+	  		<li class="icon-list"><a href="https://twitter.com/felis_3007"><img class="social-media-icon" src="../img/twitter.png"></a></li>
+	  	</ul>
+	  	<h3>Also check out</h3>
+	  	<hr>
+	  	<a class="other-works-link" href="../gps1.1.html">
+	  	<div class="other-works">
+	  		<p>Pair Programming 101 </p>
+	  	</div>	
+	    </a>
+	    <p></p>
+	    <a class="other-works-link" href="../starting-point.html">
+	  	<div class="other-works">
+	  		<p>Responsive Design Sample</p>
+	  	</div>	
+	    </a>
+	  	<h3>Archive</h3>
+	  	<hr>
+	  	<ul class="archive-list">
+	  		<li>2014
+	  			<ul>
+	  				<li>TBD - need to figure out treeview</li>
+	  		    </ul>
+	  		</li>
+	  	</ul>
+	    </section>
+	  </div>
+  </div>
+  <div class="footer">
+  	<hr>
+  	<small>Image logo source by <a href="http://vectorcharacters.net/geek-vector-characters/geek-girl-vector-character">vectorcharacters.net</a> | Other designs by Felicia Wang</small></div>
+</div>
+<body>
